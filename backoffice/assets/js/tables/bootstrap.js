@@ -103,11 +103,11 @@
       url: "../../assets/data/bootstrap_table_test.json",
       height: "400",
       iconSize: 'outline',
-      showColumns: true,
+      // showColumns: true,
       icons: {
         refresh: 'wb-refresh',
         toggle: 'wb-order',
-        columns: 'wb-list-bulleted'
+        // columns: 'wb-list-bulleted'
       }
     });
   })();
@@ -124,13 +124,13 @@
       search: true,
       showRefresh: true,
       showToggle: true,
-      showColumns: true,
+      // showColumns: true,
       toolbar: '#exampleToolbar',
       iconSize: 'outline',
       icons: {
         refresh: 'wb-refresh',
         toggle: 'wb-order',
-        columns: 'wb-list-bulleted'
+        // columns: 'wb-list-bulleted'
       }
     });
   })();
@@ -144,13 +144,13 @@
       pagination: true,
       showRefresh: true,
       showToggle: true,
-      showColumns: true,
+      // showColumns: true,
       iconSize: 'outline',
       toolbar: '#exampleTableEventsToolbar',
       icons: {
         refresh: 'wb-refresh',
         toggle: 'wb-order',
-        columns: 'wb-list-bulleted'
+        // columns: 'wb-list-bulleted'
       }
     });
 

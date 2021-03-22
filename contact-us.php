@@ -91,7 +91,7 @@
               </div>
               <div class="col-lg-4 col-md-3">
                   <h4>Scan or Click</h4>
-                  <a href="https://line.me/ti/p/oXSCjamk7D" target="_blank"><img src="img/qr.png" class="img-responsive max-480"></a>
+                  <a href="https://line.me/ti/p/b28Cn9LIlH" target="_blank"><img src="img/qr.png" class="img-responsive max-480"></a>
                 </div>
             </div>
 

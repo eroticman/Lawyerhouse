@@ -1368,15 +1368,15 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
   border-radius: 1000px;
 }
 
-.btn-primary {
+/* .btn-primary {
   color: #fff;
-  background-color: #dbbb5f;
-  border-color: #dbbb5f;
+  background-color: #12463e;
+  border-color: #12463e;
   box-shadow: none;
 }
 
 .btn-primary.btn-up:before {
-  border-bottom-color: #dbbb5f;
+  border-bottom-color: #12463e;
 }
 
 .btn-primary.btn-up:hover:before, .btn-primary.btn-up.hover:before, .btn-primary.btn-up:focus:before, .btn-primary.btn-up.focus:before {
@@ -1388,7 +1388,7 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
 }
 
 .btn-primary.btn-right:before {
-  border-left-color: #dbbb5f;
+  border-left-color: #12463e;
 }
 
 .btn-primary.btn-right:hover:before, .btn-primary.btn-right.hover:before, .btn-primary.btn-right:focus:before, .btn-primary.btn-right.focus:before {
@@ -1400,7 +1400,7 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
 }
 
 .btn-primary.btn-bottom:before {
-  border-top-color: #dbbb5f;
+  border-top-color: #12463e;
 }
 
 .btn-primary.btn-bottom:hover:before, .btn-primary.btn-bottom.hover:before, .btn-primary.btn-bottom:focus:before, .btn-primary.btn-bottom.focus:before {
@@ -1412,7 +1412,7 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
 }
 
 .btn-primary.btn-left:before {
-  border-right-color: #dbbb5f;
+  border-right-color: #12463e;
 }
 
 .btn-primary.btn-left:hover:before, .btn-primary.btn-left.hover:before, .btn-primary.btn-left:focus:before, .btn-primary.btn-left.focus:before {
@@ -1425,14 +1425,14 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
 
 .btn-primary:hover, .btn-primary.hover, .btn-primary:focus, .btn-primary.focus {
   color: #fff;
-  background-color: #dbbb5f;
-  border-color: #dbbb5f;
+  background-color: #12463e;
+  border-color: #12463e;
   box-shadow: none;
 }
 
 .btn-primary:not([disabled]):not(.disabled):active, .btn-primary:not([disabled]):not(.disabled).active, .open > .btn-primary.dropdown-toggle, .show > .btn-primary.dropdown-toggle {
-  background-color: #dbbb5f;
-  border-color: #dbbb5f;
+  background-color: #12463e;
+  border-color: #12463e;
   box-shadow: none;
 }
 
@@ -1445,7 +1445,7 @@ a.btn:not(.btn-link), a.btn:not(.btn-link):active, a.btn:not(.btn-link).active {
   color: #fff;
   background-color: #c50000;
   border-color: #c50000;
-}
+} */
 
 .btn-primary .badge-pill {
   color: #3e8ef7;

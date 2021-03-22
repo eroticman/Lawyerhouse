@@ -10,7 +10,7 @@
                   <div class="icon-social">
                     <a href="https://www.facebook.com/Lawyer-House-CoLtd-1931020770285843/" target="_blank"><img src="img/icon/fb.png"></a>
                     <!-- <a href=""><img src="img/icon/ig.png"></a> -->
-                    <a href="https://line.me/ti/p/oXSCjamk7D" target="_blank"><img src="img/icon/ln.png"></a>
+                    <a href="https://line.me/ti/p/b28Cn9LIlH" target="_blank"><img src="img/icon/ln.png"></a>
                   </div>
               </div>
           </div>
