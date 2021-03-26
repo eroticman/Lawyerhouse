@@ -1,6 +1,6 @@
 <?php 
 $config['database']	= array(
-	'connect_type'	=> 'host', // null|client|host
+	'connect_type'	=> 'client', // null|client|host
 	'charset'		=> 'utf8',
 	'collation'		=> 'utf8_general_ci',
 	'timezone'		=> 'Asia/Bangkok',

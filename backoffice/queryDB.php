@@ -83,4 +83,15 @@ if ( $_POST['action'] == 'delSlide' ) {
 	}
 }
 
+if ( $_POST['action'] == 'delTeam' ) {
+	$sql = "UPDATE db_team SET is_active = '0' WHERE id = {$_POST['tid']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
 ?>

@@ -72,6 +72,12 @@ require_once 'auth.php';
 							<span class="site-menu-title">Banner Slide</span>
 						</a>
 					</li>
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('team.php', 'team_add.php', 'team_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="team.php">
+							<i class="site-menu-icon icon fa-users" aria-hidden="true"></i>
+							<span class="site-menu-title">Team</span>
+						</a>
+					</li>
 					<li class="site-menu-item <?php echo ( in_array($current_file, array('blog.php', 'blog_add.php', 'blog_edit.php') ) ) ? 'active' : ''; ?>">
 						<a class="animsition-link" href="blog.php">
 							<i class="site-menu-icon icon fa-paper-plane" aria-hidden="true"></i>

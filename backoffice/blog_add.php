@@ -90,12 +90,20 @@
 				                  	<input type="text" class="form-control" id="keyword" name="keyword" placeholder="keyword1, keyword2, keyword3" required>
 				                </div>
 				                <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="title">Blog Name</label>
+				                  	<label class="form-control-label" for="title">Blog Name(TH)</label>
 				                  	<input type="text" class="form-control" id="name" name="name" placeholder="Blog Name" required>
 				                </div>
+				                <div class="form-group form-material" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="title">Blog Name(EN)</label>
+				                  	<input type="text" class="form-control" id="name_en" name="name_en" placeholder="Blog Name" required>
+				                </div>
 								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description</label>
+									<label class="form-control-label" for="detail">Description(TH)</label>
 									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor" name="description"></textarea>
+								</div>
+								<div class="form-group form-material" data-plugin="formMaterial">
+									<label class="form-control-label" for="detail">Description(EN)</label>
+									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor_en" name="description_en"></textarea>
 								</div>
 								<div class="form-group form-material form-material-file" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="image">Images Cover</label>
@@ -154,6 +162,9 @@
 
 	<script>
 		CKEDITOR.replace( 'editor', {
+
+		} );
+		CKEDITOR.replace( 'editor_en', {
 
 		} );
 	</script> 

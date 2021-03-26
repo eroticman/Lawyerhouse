@@ -102,13 +102,23 @@
 				                  	<input type="text" class="form-control" id="keyword" name="keyword" value="<?php echo $service_detail->keyword; ?>" required>
 				                </div>
 				                <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="title">Service Name</label>
+				                  	<label class="form-control-label" for="title">Service Name(TH)</label>
 				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $service_detail->service_name; ?>" required>
 				                </div>
+				                <div class="form-group form-material" data-plugin="formMaterial">
+				                  	<label class="form-control-label" for="title">Service Name(EN)</label>
+				                  	<input type="text" class="form-control" id="name_en" name="name_en" value="<?php echo $service_detail->service_name_en; ?>" required>
+				                </div>
 								<div class="form-group form-material" data-plugin="formMaterial">
-									<label class="form-control-label" for="detail">Description</label>
+									<label class="form-control-label" for="detail">Description(TH)</label>
 									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor" name="description">
 											<?php echo $service_detail->description; ?>
+									</textarea>
+								</div>
+								<div class="form-group form-material" data-plugin="formMaterial">
+									<label class="form-control-label" for="detail">Description(EN)</label>
+									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor_en" name="description_en">
+											<?php echo $service_detail->description_en; ?>
 									</textarea>
 								</div>
 				                <div class="text-right">
@@ -164,6 +174,9 @@
 
 	<script>
 		CKEDITOR.replace( 'editor', {
+
+		} );
+		CKEDITOR.replace( 'editor_en', {
 
 		} );
 	</script> 

@@ -259,9 +259,9 @@ function blog_add() {
 	$created = date('Y-m-d H:i:s');
 
 	$sql	 = "INSERT INTO db_blog
-				(url_name, keyword, blog_name, description, created) 
+				(url_name, keyword, blog_name, blog_name_en, description, description_en, created) 
 				VALUE 
-				('{$_POST['urlname']}', '{$_POST['keyword']}', '{$_POST['name']}', '{$_POST['description']}', '{$created}')";
+				('{$_POST['urlname']}', '{$_POST['keyword']}', '{$_POST['name']}', '{$_POST['name_en']}', '{$_POST['description']}', '{$_POST['description_en']}', '{$created}')";
 	// exit;
 	$added = query($sql);
 
@@ -326,7 +326,7 @@ function blog_edit() {
 	$blog_id 	= $_POST['blog_id'];
 
 	$sql = "UPDATE db_blog
-			SET url_name = '{$_POST['urlname']}', keyword = '{$_POST['keyword']}', blog_name = '{$_POST['name']}', description = '{$_POST['description']}', updated = '{$update_date}'
+			SET url_name = '{$_POST['urlname']}', keyword = '{$_POST['keyword']}', blog_name = '{$_POST['name']}', blog_name_en = '{$_POST['name_en']}', description = '{$_POST['description']}', description_en = '{$_POST['description_en']}', updated = '{$update_date}'
 			WHERE id = '{$blog_id}'";
 	// exit;
 	$updated = query($sql);
@@ -415,9 +415,9 @@ function service_add() {
 	$created = date('Y-m-d H:i:s');
 
 	$sql	 = "INSERT INTO db_service
-				(url_name, keyword, service_name, description, created) 
+				(url_name, keyword, service_name, service_name_en, description, description_en, created) 
 				VALUE 
-				('{$_POST['urlname']}', '{$_POST['keyword']}', '{$_POST['name']}', '{$_POST['description']}', '{$created}')";
+				('{$_POST['urlname']}', '{$_POST['keyword']}', '{$_POST['name']}', '{$_POST['name_en']}', '{$_POST['description']}', '{$_POST['description_en']}', '{$created}')";
 	// exit;
 	$added = query($sql);
 
@@ -429,10 +429,166 @@ function service_edit() {
 	$service_id 	= $_POST['service_id'];
 
 	$sql = "UPDATE db_service
-			SET url_name = '{$_POST['urlname']}', keyword = '{$_POST['keyword']}', service_name = '{$_POST['name']}', description = '{$_POST['description']}', updated = '{$update_date}'
+			SET url_name = '{$_POST['urlname']}', keyword = '{$_POST['keyword']}', service_name = '{$_POST['name']}', service_name_en = '{$_POST['name_en']}', description = '{$_POST['description']}', description_en = '{$_POST['description_en']}', updated = '{$update_date}'
 			WHERE id = '{$service_id}'";
 	// exit;
 	$updated = query($sql);
+
+	return $updated;
+}
+
+function team_list()
+{
+	$sql	= "SELECT *
+				FROM db_team
+				WHERE is_active = '1'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function team_detail($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM db_team
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function team_add() {
+	$created = date('Y-m-d H:i:s');
+
+	$sql	 = "INSERT INTO db_team
+				(name, name_en, position, position_en, description, description_en, created) 
+				VALUE 
+				('{$_POST['name']}', '{$_POST['name_en']}', '{$_POST['position']}', '{$_POST['position_en']}', '{$_POST['description']}', '{$_POST['description_en']}','{$created}')";
+	// exit;
+	$added = query($sql);
+
+	if(!empty($added))
+	{
+		global $db_connected;
+
+		$team_id = mysqli_insert_id($db_connected);
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../img/team/' . $team_id . '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $storage_path . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				$sql = "UPDATE db_team SET img_cover = '{$file_name}' WHERE id = '{$team_id}'";
+				query($sql);
+			}
+		}
+	}
+
+	return $added;
+}
+
+function team_edit() {
+	$update_date 	= date('Y-m-d H:i:s');
+	$team_id 	= $_POST['team_id'];
+
+	$sql = "UPDATE db_team
+			SET name = '{$_POST['name']}', name_en = '{$_POST['name_en']}', position = '{$_POST['position']}', position_en = '{$_POST['position_en']}', description = '{$_POST['description']}', description_en = '{$_POST['description_en']}', updated = '{$update_date}'
+			WHERE id = '{$team_id}'";
+	// exit;
+	$updated = query($sql);
+
+	if(!empty($updated))
+	{
+		global $db_connected;
+
+		if(!empty($_FILES['covImg']))
+		{
+			$file_name		= $_FILES['covImg']["name"];
+			$file_name		= preg_replace('/[^\w\._]+/', '_', $file_name);
+			$filePath 		= '../img/team/' . $team_id . '/';
+			$file_path		= $filePath . $file_name;
+
+			if ( !is_dir($filePath) ) {
+				mkdir($filePath);
+			}
+			
+			if(file_exists($file_path))
+			{
+				$number			= 2;
+				$file_exists	= true;
+				$file_extension	= null;
+
+				preg_match('/(\.([a-zA-Z]+))$/i', $file_name, $matchs);
+				if(!empty($matchs[2]))
+				{
+					$file_extension = $matchs[2];
+				}
+
+				$file_name_only	= preg_replace("/(\.{$file_extension})/i", null, $file_name);
+
+				while(file_exists($file_path))
+				{
+					$file_name = $file_name_only . "_{$number}.{$file_extension}";
+					$file_path = $filePath . $file_name;
+					
+					$number++;
+				}
+			}
+
+			$moved = move_uploaded_file($_FILES['covImg']["tmp_name"], $file_path);
+
+			if($moved)
+			{
+				/*$originalFile 	= $file_path;
+				$targetFile 	= $file_path;
+
+				resizeImg( $originalFile, $targetFile, $file_extension, 1000, 1000 );*/
+				$sql = "UPDATE db_team SET img_cover = '{$file_name}' WHERE id = '{$team_id}'";
+				query($sql);
+			}
+		}
+	}
 
 	return $updated;
 }
