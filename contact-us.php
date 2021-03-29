@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1>Contact Us</h1>
+          <h1><?php echo $contact ?></h1>
         </div>
       </div>
     </div>
@@ -65,9 +65,8 @@
           <div class="address-detail">
             <div class="contact-inline">
                 <i class="fa fa-home"></i>
-                <h5><strong>บริษัท ลอว์เยอร์ เฮ้าส์ จำกัด</strong><br>
-                77/358 หมู่บ้านภัสสร 19 ถนนจตุโชติ แขวงออเงิน <br>เขตสายไหม กรุงเทพมหานคร 10220</h5>
-                <h5>77/358 Passorn 19 Village, Chatuchot Rd, Orngoen, SaiMai, Bangkok, 10220</h5>
+                <h5><strong><?php echo $lawyer ?></strong><br>
+                <?php echo $address ?></h5>
             </div>
             <div class="row">
               <div class="col-lg-8 col-md-9">
@@ -90,7 +89,7 @@
                 </div>
               </div>
               <div class="col-lg-4 col-md-3">
-                  <h4>Scan or Click</h4>
+                  <h4><?php echo $scan ?></h4>
                   <a href="https://line.me/ti/p/b28Cn9LIlH" target="_blank"><img src="img/qr.png" class="img-responsive max-480"></a>
                 </div>
             </div>
@@ -98,26 +97,26 @@
           </div>
         </div>
         <div class="col-lg-6">
-          <h3 class="h3-contact">Contact Form :</h3>
+          <h3 class="h3-contact"><?php echo $contactform ?> :</h3>
           <form id="contact-form">
             <div class="row">
               <div class="form-group col-lg-6 col-md-6">
-                <input type="email" class="form-control" id="fname"  placeholder="First Name">
+                <input type="email" class="form-control" id="fname"  placeholder="<?php echo $firstname ?>">
               </div>
               <div class="form-group col-lg-6 col-md-6">
-                <input type="email" class="form-control" id="lname"  placeholder="Last Name">
+                <input type="email" class="form-control" id="lname"  placeholder="<?php echo $lastname ?>">
               </div>
               <div class="form-group col-lg-6 col-md-6">
-                <input type="email" class="form-control" id="tel"  placeholder="Tel">
+                <input type="email" class="form-control" id="tel"  placeholder="<?php echo $tel ?>">
               </div>
               <div class="form-group col-lg-6 col-md-6">
-                <input type="email" class="form-control" id="email"  placeholder="Email">
+                <input type="email" class="form-control" id="email"  placeholder="<?php echo $email ?>">
               </div>
               <div class="form-group col-lg-12">
-                <textarea class="form-control" rows="5" id="comment" placeholder="Message"></textarea>
+                <textarea class="form-control" rows="5" id="comment" placeholder="<?php echo $message ?>"></textarea>
               </div>
             </div>
-              <button type="button" onclick="sendEmail()" class="buttonsend">Submit</button>
+              <button type="button" onclick="sendEmail()" class="buttonsend"><?php echo $submit ?></button>
           </form>
         </div>
       </div>

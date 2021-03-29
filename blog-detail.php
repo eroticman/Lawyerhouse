@@ -65,7 +65,7 @@
         <div class="col-lg-12">
           <div class="detail-blog-img">
               <img src="img/blog/<?php echo $blog_Detail->id; ?>/<?php echo $blog_Detail->img_cover; ?>">
-              <h5>สร้างเมื่อ : วันที่ <?php echo date("d/m/Y", strtotime( $blog_Detail->created ) );?></h5>
+              <h5><?php echo $create ?> <?php echo date("d/m/Y", strtotime( $blog_Detail->created ) );?></h5>
           </div>
           <div class="detail-blog-content">
               <?php echo $blog_Detail->description; ?>
@@ -80,7 +80,7 @@
       <div class="row padding-bottom-30">
         <div class="col-lg-12">
           <div class="related">
-            <h2>Related News & Blog</h2>
+            <h2><?php echo $relate ?></h2>
             <hr class="yellow-hr">
           </div>
         </div>
@@ -105,7 +105,7 @@
                     <div class="card-header-a">
                       <h2 class="card-title-a"><?php echo $related_detail->blog_name; ?></h2>
                       <hr>
-                      <p>Read >></p>
+                      <p><?php echo $read ?> >></p>
                     </div>
                   </div>
                 </div>

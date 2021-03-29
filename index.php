@@ -10,7 +10,8 @@
     content="รับปรึกษาปัญหาด้านกฎหมายแพ่งและพาณิชย์ กฎหมายอาญา กฎหมายแรงงาน ทำนิติกรรมสัญญา รับทำบัญชี" />
   <title>Home | Lawyer House</title>
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta name="keywords" content="ทนายความ, ว่าความ, จ้างทนายความ, ปรึกษากฏหมาย, ขึ้นศาล, หาทนายความ, ทนายเก่ง, lawyerhouse, กฎหมายแพ่ง, กฎหมายอาญา,
+  <meta name="keywords"
+    content="ทนายความ, ว่าความ, จ้างทนายความ, ปรึกษากฏหมาย, ขึ้นศาล, หาทนายความ, ทนายเก่ง, lawyerhouse, กฎหมายแพ่ง, กฎหมายอาญา,
   กฎหมาย, กฎหมายแรงงาน, กฎหมายทรัพย์สินทางปัญญา, ผู้เชี่ยวชาญด้านกฏหมาย, กฎหมายภาษีอากร, บริการจดทะเเบียนธุรกิจ, สืบสวน, บริการด้านการสืบสวน, บริษัท ลอว์เยอร์ เฮ้าส์ จำกัด">
   <meta name="description" content="บริษัท ลอว์เยอร์ เฮ้าส์ จำกัด เป็นบริษัทให้บริการด้านกฎหมายครบวงจร
                 ก่อตั้งขึ้นจากการรวมตัวกันของนักกฎหมายที่มีความเชี่ยวชาญระดับมืออาชีพ
@@ -113,12 +114,8 @@
       <div class="row">
         <div class="col-lg-5 z-index-1 padding-bottom-30-m">
           <div class="about-us margin-right-20rem">
-            <h2>บริษัท ลอว์เยอร์ เฮ้าส์ จำกัด </h2>
-            <p>เป็นบริษัทให้บริการด้านกฎหมายครบวงจร<br class="hide-480">
-              ก่อตั้งขึ้นจากการรวมตัวกันของนักกฎหมายที่มีความเชี่ยวชาญระดับมืออาชีพ<br
-                class="hide-480">ที่มีประสบการณ์ทางด้านกฎหมายยาวนาน ประกอบด้วยผู้เชี่ยวชาญ
-              ด้านกฎหมายหลายๆด้าน ไม่ว่าจะเป็น กฎหมายแพ่งและพาณิชย์ กฎหมายอาญา กฎหมายทรัพย์สินทางปัญญา กฎหมายปกครอง
-              กฎหมายครอบครัว และกฎหมายภาษีอากร กฎหมายแรงงาน เป็นต้น</p>
+            <h2><?php echo $lawyer ?></h2>
+            <p><?php echo $aboutindex ?></p>
           </div>
         </div>
         <div class="col-lg-7 z-index-0">
@@ -134,7 +131,8 @@
     <div class="container">
       <div class="row padding-bottom-30">
         <div class="col-lg-12 text-center">
-          <h1><i class="fas fa-legal" style="transform: scaleX(-1);" aria-hidden="true"></i> Services</h1>
+          <h1><i class="fas fa-legal" style="transform: scaleX(-1);" aria-hidden="true"></i> <?php echo $services ?>
+          </h1>
         </div>
       </div>
       <div class="row">
@@ -191,11 +189,73 @@
   <!--/ Agents End /-->
 
 
+  <!-- Real -->
+  <section class="section-real" id="yellow-color">
+    <div class="container">
+      <div class="row padding-bottom-30">
+        <div class="col-lg-12 text-center">
+          <h1><i class="fas fa-hotel"></i> <?php echo $realestate ?>
+          </h1>
+        </div>
+      </div>
+      <div class="row">
+        <?php 
+        $service_list = service_list();
+      ?>
+        <div class="col-lg-6 col-md-6">
+          <?php if (!empty($service_list[0])) : ?>
+          <a href="services/<?php echo $service_list[0]->id; ?>/<?php echo $service_list[0]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[0]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[1])) : ?>
+          <a href="services/<?php echo $service_list[1]->id; ?>/<?php echo $service_list[1]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[1]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[2])) : ?>
+          <a href="services/<?php echo $service_list[2]->id; ?>/<?php echo $service_list[2]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[2]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[3])) : ?>
+          <a href="services/<?php echo $service_list[3]->id; ?>/<?php echo $service_list[3]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[3]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+        </div>
+        <div class="col-lg-6 col-md-6">
+          <?php if (!empty($service_list[4])) : ?>
+          <a href="services/<?php echo $service_list[4]->id; ?>/<?php echo $service_list[4]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[4]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[5])) : ?>
+          <a href="services/<?php echo $service_list[5]->id; ?>/<?php echo $service_list[5]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[5]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[6])) : ?>
+          <a href="services/<?php echo $service_list[6]->id; ?>/<?php echo $service_list[6]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[6]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+          <?php if (!empty($service_list[7])) : ?>
+          <a href="services/<?php echo $service_list[7]->id; ?>/<?php echo $service_list[7]->url_name; ?>">
+            <h4><?php echo '-' . ' ' . $service_list[7]->service_name; ?></h4>
+          </a>
+          <?php endif ?>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- Real -->
+
   <section class="blog">
     <div class="container">
       <div class="row padding-bottom-30">
         <div class="col-lg-12 text-center">
-          <h1><i class="fas fa-legal" style="transform: scaleX(-1);" aria-hidden="true"></i> News & Blog</h1>
+          <h1><i class="fas fa-legal" style="transform: scaleX(-1);" aria-hidden="true"></i> <?php echo $news ?></h1>
         </div>
       </div>
       <div class="row">
@@ -217,7 +277,7 @@
                   <div class="card-header-a">
                     <h2 class="card-title-a"><?php echo $blog_detail->blog_name; ?></h2>
                     <hr>
-                    <p>Read >></p>
+                    <p><?php echo $read ?> >></p>
                   </div>
                 </div>
               </div>
@@ -228,7 +288,7 @@
       </div>
       <div class="row">
         <div class="col-lg-12 text-center">
-          <button type="button" onclick="location.href='blog'" class="buttonsend">View All</button>
+          <button type="button" onclick="location.href='blog'" class="buttonsend"><?php echo $viewall ?></button>
         </div>
       </div>
     </div>
@@ -251,7 +311,7 @@
                 hs.async = true;
                 hs.src = ('//s10.histats.com/js15_as.js');
                 (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(
-                hs);
+                  hs);
               })();
             </script>
             <noscript><a href="/" target="_blank"><img src="//sstatic1.histats.com/0.gif?4407568&101" alt=""

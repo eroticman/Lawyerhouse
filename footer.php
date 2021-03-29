@@ -4,9 +4,8 @@
       <div class="row">
           <div class="col-lg-4 col-md-12 padding-bottom-30-m">
               <div class="footer-detail">
-                <h4>บริษัท ลอว์เยอร์ เฮ้าส์ จำกัด</h4>
-                  <h5>77/358 หมู่บ้านภัสสร 19 ถนนจตุโชติ <br> แขวงออเงิน เขตสายไหม กรุงเทพมหานคร 10220</h5>
-                  <h5 class="h5-en">77/358 Passorn 19 Village, Chatuchot Rd, Orngoen, SaiMai, Bangkok, 10220</h5>
+                <h4><?php echo $lawyer ?></h4>
+                  <h5><?php echo $address ?></h5>
                   <div class="icon-social">
                     <a href="https://www.facebook.com/Lawyer-House-CoLtd-1931020770285843/" target="_blank"><img src="img/icon/fb.png"></a>
                     <!-- <a href=""><img src="img/icon/ig.png"></a> -->
@@ -16,7 +15,7 @@
           </div>
           <div class="col-lg-4 col-md-6 padding-bottom-30-480">
               <div class="footer-detail">
-                  <h4>บริการ :</h4>
+                  <h4><?php echo $services ?> :</h4>
                   <?php 
                     foreach ($service_list as $service_detail) :
                   ?>
@@ -27,7 +26,7 @@
           </div>
           <div class="col-lg-4 col-md-6 padding-bottom-30-480">
               <div class="footer-detail padding-bottom-15">
-                  <h4>Contact :</h4>
+                  <h4><?php echo $contact ?> :</h4>
                   <a href="tel:0632087858"><h5><i class="fa fa-phone-square" style="transform: scaleX(-1);" aria-hidden="true"></i> 063-208-7858</h5></a>
                   <a href="tel:021587458"><h5><i class="fa fa-phone-square" style="transform: scaleX(-1);" aria-hidden="true"></i> 02-158-7458</h5></a>
                   <a href="mailtp:lawyerhouse.th@gmail.com"><h5><i class="fa fa-envelope" aria-hidden="true"></i> lawyerhouse.th@gmail.com</h5></a>

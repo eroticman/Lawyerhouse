@@ -50,7 +50,7 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1>News & Blog</h1>
+          <h1><?php echo $news ?></h1>
         </div>
       </div>
     </div>
@@ -79,7 +79,7 @@
                   <div class="card-header-a">
                     <h2 class="card-title-a"><?php echo $blogDetail->blog_name; ?></h2>
                     <hr>
-                    <p>Read >></p>
+                    <p><?php echo $read ?> >></p>
                   </div>
                 </div>
               </div>
