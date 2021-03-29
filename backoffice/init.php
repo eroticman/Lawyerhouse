@@ -593,5 +593,56 @@ function team_edit() {
 	return $updated;
 }
 
+function real_estate_list()
+{
+	$sql	= "SELECT *
+				FROM db_real_estate
+				WHERE is_active = '1' AND is_sub = '0'
+				ORDER BY id ASC";
+	
+	return query($sql);
+}
+
+function real_estate_detail($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM db_real_estate
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
+function real_estate_add() {
+	$created = date('Y-m-d H:i:s');
+
+	$sql	 = "INSERT INTO db_real_estate
+				(url_name, keyword, real_estate_name, real_estate_name_en, description, description_en, created) 
+				VALUE 
+				('{$_POST['urlname']}', '{$_POST['keyword']}', '{$_POST['name']}', '{$_POST['name_en']}', '{$_POST['description']}', '{$_POST['description_en']}', '{$created}')";
+	// exit;
+	$added = query($sql);
+
+	return $added;
+}
+
+function real_estate_edit() {
+	$update_date 	= date('Y-m-d H:i:s');
+	$real_estate_id 	= $_POST['real_estate_id'];
+
+	$sql = "UPDATE db_real_estate
+			SET url_name = '{$_POST['urlname']}', keyword = '{$_POST['keyword']}', real_estate_name = '{$_POST['name']}', real_estate_name_en = '{$_POST['name_en']}', description = '{$_POST['description']}', description_en = '{$_POST['description_en']}', updated = '{$update_date}'
+			WHERE id = '{$real_estate_id}'";
+	// exit;
+	$updated = query($sql);
+
+	return $updated;
+}
+
 ?>
 

@@ -90,6 +90,12 @@ require_once 'auth.php';
 							<span class="site-menu-title">Service</span>
 						</a>
 					</li>
+					<li class="site-menu-item <?php echo ( in_array($current_file, array('real_estate.php', 'real_estate_add.php', 'real_estate_edit.php') ) ) ? 'active' : ''; ?>">
+						<a class="animsition-link" href="real_estate.php">
+							<i class="site-menu-icon icon fa-bank" aria-hidden="true"></i>
+							<span class="site-menu-title">Real Estate</span>
+						</a>
+					</li>
 				</ul>
 			</div>
 		</div>

@@ -94,4 +94,26 @@ if ( $_POST['action'] == 'delTeam' ) {
 	}
 }
 
+if ( $_POST['action'] == 'delService' ) {
+	$sql = "UPDATE db_service SET is_active = '0' WHERE id = {$_POST['sid']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
+if ( $_POST['action'] == 'delRealEstate' ) {
+	$sql = "UPDATE db_real_estate SET is_active = '0' WHERE id = {$_POST['rid']}";
+	$result = query($sql);
+
+	if ($result) {
+		echo 'true';
+	} else {
+		echo 'false';
+	}
+}
+
 ?>
