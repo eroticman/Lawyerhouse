@@ -53,7 +53,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1><?php echo $blog_Detail->blog_name; ?></h1>
+          <h1>
+            <?php 
+              if( $_SESSION['lang'] === 'th') {
+                  echo $blog_Detail->blog_name;
+              } else {
+                  echo $blog_Detail->blog_name_en;
+              }
+            ?>
+          </h1>
         </div>
       </div>
     </div>
@@ -68,7 +76,13 @@
               <h5><?php echo $create ?> <?php echo date("d/m/Y", strtotime( $blog_Detail->created ) );?></h5>
           </div>
           <div class="detail-blog-content">
-              <?php echo $blog_Detail->description; ?>
+            <?php 
+              if( $_SESSION['lang'] === 'th') {
+                  echo $blog_Detail->description;
+              } else {
+                  echo $blog_Detail->description_en;
+              }
+            ?>
           </div>
         </div>
       </div>
@@ -103,7 +117,15 @@
                 <div class="card-overlay">
                   <div class="card-overlay-a-content">
                     <div class="card-header-a">
-                      <h2 class="card-title-a"><?php echo $related_detail->blog_name; ?></h2>
+                      <h2 class="card-title-a">
+                        <?php 
+                          if( $_SESSION['lang'] === 'th') {
+                              echo $related_detail->blog_name;
+                          } else {
+                              echo $related_detail->blog_name_en;
+                          }
+                        ?>
+                      </h2>
                       <hr>
                       <p><?php echo $read ?> >></p>
                     </div>

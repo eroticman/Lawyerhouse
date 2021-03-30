@@ -19,8 +19,16 @@
                   <?php 
                     foreach ($service_list as $service_detail) :
                   ?>
-                      <a href="services/<?php echo $service_detail->id; ?>/<?php echo $service_detail->url_name; ?>"><h5>- <?php echo $service_detail->service_name; ?></h5></a>
-                      <!-- <a href="services-detail?id=<?php echo $service_detail->id; ?>"><h5>- <?php echo $service_detail->service_name; ?></h5></a> -->
+                      <a href="services/<?php echo $service_detail->id; ?>/<?php echo $service_detail->url_name; ?>">
+                        <h5>- 
+                        <?php if( $_SESSION['lang'] === 'th') {
+                              echo $service_detail->service_name;
+                          } else {
+                              echo $service_detail->service_name_en;
+                          }
+                        ?>
+                        </h5>
+                      </a>
                   <?php endforeach ?>
               </div>
           </div>

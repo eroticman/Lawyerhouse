@@ -1,5 +1,9 @@
 <?php 
+  session_start();
+    if(empty($_SESSION["lang"])){ $_SESSION["lang"] = 'th';}
+    if(!empty($_POST["language"])){$_SESSION["lang"] = $_POST["language"]; header("Refresh:0");}
   include 'config/init.php';
+  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -142,45 +146,88 @@
         <div class="col-lg-6 col-md-6">
           <?php if (!empty($service_list[0])) : ?>
           <a href="services/<?php echo $service_list[0]->id; ?>/<?php echo $service_list[0]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[0]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[0]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[0]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
           <?php if (!empty($service_list[1])) : ?>
           <a href="services/<?php echo $service_list[1]->id; ?>/<?php echo $service_list[1]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[1]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[1]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[1]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
           <?php if (!empty($service_list[2])) : ?>
           <a href="services/<?php echo $service_list[2]->id; ?>/<?php echo $service_list[2]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[2]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[2]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[2]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
           <?php if (!empty($service_list[3])) : ?>
           <a href="services/<?php echo $service_list[3]->id; ?>/<?php echo $service_list[3]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[3]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[3]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[3]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
         </div>
         <div class="col-lg-6 col-md-6">
           <?php if (!empty($service_list[4])) : ?>
           <a href="services/<?php echo $service_list[4]->id; ?>/<?php echo $service_list[4]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[4]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[4]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[4]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
           <?php if (!empty($service_list[5])) : ?>
           <a href="services/<?php echo $service_list[5]->id; ?>/<?php echo $service_list[5]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[5]->service_name; ?></h4>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[5]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[5]->service_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
           <?php if (!empty($service_list[6])) : ?>
           <a href="services/<?php echo $service_list[6]->id; ?>/<?php echo $service_list[6]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[6]->service_name; ?></h4>
-          </a>
-          <?php endif ?>
-          <?php if (!empty($service_list[7])) : ?>
-          <a href="services/<?php echo $service_list[7]->id; ?>/<?php echo $service_list[7]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[7]->service_name; ?></h4>
-          </a>
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $service_list[6]->service_name;
+                } else {
+                    echo '-' . ' ' . $service_list[6]->service_name_en;
+                }
+              ?>
+            </h4>
           <?php endif ?>
         </div>
       </div>
@@ -200,49 +247,93 @@
       </div>
       <div class="row">
         <?php 
-        $service_list = service_list();
+        $realList = realList();
       ?>
         <div class="col-lg-6 col-md-6">
-          <?php if (!empty($service_list[0])) : ?>
-          <a href="services/<?php echo $service_list[0]->id; ?>/<?php echo $service_list[0]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[0]->service_name; ?></h4>
+          <?php if (!empty($realList[0])) : ?>
+          <a href="services/<?php echo $realList[0]->id; ?>/<?php echo $realList[0]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[0]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[0]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
-          <?php if (!empty($service_list[1])) : ?>
-          <a href="services/<?php echo $service_list[1]->id; ?>/<?php echo $service_list[1]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[1]->service_name; ?></h4>
+          <?php if (!empty($realList[1])) : ?>
+          <a href="services/<?php echo $realList[1]->id; ?>/<?php echo $realList[1]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[1]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[1]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
-          <?php if (!empty($service_list[2])) : ?>
-          <a href="services/<?php echo $service_list[2]->id; ?>/<?php echo $service_list[2]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[2]->service_name; ?></h4>
+          <?php if (!empty($realList[2])) : ?>
+          <a href="services/<?php echo $realList[2]->id; ?>/<?php echo $realList[2]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[2]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[2]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
-          <?php if (!empty($service_list[3])) : ?>
-          <a href="services/<?php echo $service_list[3]->id; ?>/<?php echo $service_list[3]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[3]->service_name; ?></h4>
+          <?php if (!empty($realList[3])) : ?>
+          <a href="services/<?php echo $realList[3]->id; ?>/<?php echo $realList[3]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[3]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[3]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
         </div>
         <div class="col-lg-6 col-md-6">
-          <?php if (!empty($service_list[4])) : ?>
-          <a href="services/<?php echo $service_list[4]->id; ?>/<?php echo $service_list[4]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[4]->service_name; ?></h4>
+          <?php if (!empty($realList[4])) : ?>
+          <a href="services/<?php echo $realList[4]->id; ?>/<?php echo $realList[4]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[4]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[4]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
-          <?php if (!empty($service_list[5])) : ?>
-          <a href="services/<?php echo $service_list[5]->id; ?>/<?php echo $service_list[5]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[5]->service_name; ?></h4>
+          <?php if (!empty($realList[5])) : ?>
+          <a href="services/<?php echo $realList[5]->id; ?>/<?php echo $realList[5]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[5]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[5]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
-          <?php if (!empty($service_list[6])) : ?>
-          <a href="services/<?php echo $service_list[6]->id; ?>/<?php echo $service_list[6]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[6]->service_name; ?></h4>
-          </a>
-          <?php endif ?>
-          <?php if (!empty($service_list[7])) : ?>
-          <a href="services/<?php echo $service_list[7]->id; ?>/<?php echo $service_list[7]->url_name; ?>">
-            <h4><?php echo '-' . ' ' . $service_list[7]->service_name; ?></h4>
+          <?php if (!empty($realList[6])) : ?>
+          <a href="services/<?php echo $realList[6]->id; ?>/<?php echo $realList[6]->url_name; ?>">
+            <h4>
+              <?php if( $_SESSION['lang'] === 'th') {
+                    echo '-' . ' ' . $realList[6]->real_estate_name;
+                } else {
+                    echo '-' . ' ' . $realList[6]->real_estate_name_en;
+                }
+              ?>
+            </h4>
           </a>
           <?php endif ?>
         </div>
@@ -275,7 +366,14 @@
               <div class="card-overlay">
                 <div class="card-overlay-a-content">
                   <div class="card-header-a">
-                    <h2 class="card-title-a"><?php echo $blog_detail->blog_name; ?></h2>
+                    <h2 class="card-title-a">
+                      <?php if( $_SESSION['lang'] === 'th') {
+                            echo $blog_detail->blog_name;
+                        } else {
+                            echo $blog_detail->blog_name_en;
+                        }
+                      ?>
+                    </h2>
                     <hr>
                     <p><?php echo $read ?> >></p>
                   </div>

@@ -77,7 +77,14 @@
               <div class="card-overlay">
                 <div class="card-overlay-a-content">
                   <div class="card-header-a">
-                    <h2 class="card-title-a"><?php echo $blogDetail->blog_name; ?></h2>
+                    <h2 class="card-title-a">
+                      <?php if( $_SESSION['lang'] === 'th') {
+                            echo $blogDetail->blog_name;
+                        } else {
+                            echo $blogDetail->blog_name_en;
+                        }
+                      ?>
+                    </h2>
                     <hr>
                     <p><?php echo $read ?> >></p>
                   </div>

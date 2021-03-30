@@ -39,7 +39,7 @@
             ?>
               <a class="dropdown-item"
                 href="services/<?php echo $service_detail->id; ?>/<?php echo $service_detail->url_name; ?>">-
-                <?php echo $service_detail->service_name; ?></a>
+                <?php echo ($_SESSION['lang'] === 'th') ? $service_detail->service_name : $service_detail->service_name_en; ?></a>
               <?php endforeach ?>
             </div>
           </li>
@@ -48,11 +48,14 @@
               id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo $realestate ?>
             </a>
+              <?php 
+                  $realList = realList();
+                  foreach ($realList as $realDetail) :
+              ?>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="blog">News & Blog</a>
-              <a class="dropdown-item" href="blog">News & Blog</a>
-              <a class="dropdown-item" href="blog">News & Blog</a>
-              <a class="dropdown-item" href="blog">News & Blog</a>
+              <a class="dropdown-item" href="blog">- 
+                <?php echo ($_SESSION['lang'] === 'th') ? $realDetail->real_estate_name : $realDetail->real_estate_name_en; ?></a>
+              <?php endforeach ?>
             </div>
           </li>
           <li

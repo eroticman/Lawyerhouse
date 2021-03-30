@@ -53,7 +53,15 @@
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h1><?php echo $service_Detail->service_name; ?> </h1>
+          <h1>
+            <?php 
+              if( $_SESSION['lang'] === 'th') {
+                  echo $service_Detail->service_name;
+              } else {
+                  echo $service_Detail->service_name_en;
+              }
+            ?>
+          </h1>
         </div>
       </div>
     </div>
@@ -66,7 +74,13 @@
       <div class="row">
         <div class="col-lg-12">
           <div class="services-page">
-            <?php echo $service_Detail->description; ?> 
+            <?php 
+              if( $_SESSION['lang'] === 'th') {
+                  echo $service_Detail->description;
+              } else {
+                  echo $service_Detail->description_en;
+              }
+            ?>
           </div>
         </div>
       </div>

@@ -42,6 +42,7 @@
   <?php 
     $current_page = basename(__FILE__,'.php');
     include "header.php";
+    $teamList = teamList();
   ?>
 
   <!--/ Intro Single star /-->
@@ -60,16 +61,20 @@
   <section class="section-about-us-page">
     <div class="container">
       <div class="row">
+      <?php foreach ($teamList as $teamDetail) : ?>
         <div class="col-lg-12 padding-bottom-30">
           <div class="row">
             <div class="col-lg-3 text-center">
-              <img src="img/songkrannarong2.png" class="img-responsive">
+              <img src="img/team/<?php echo $teamDetail->id; ?>/<?php echo $teamDetail->img_cover; ?>" alt="<?php echo $teamDetail->name; ?>" class="img-responsive">
             </div>
             <div class="col-lg-9">
               <div class="team-law">
-                <h4>นายสงกรานต์ณรงค์ สุขอนันต์</h4>
-                <h5>ทนายความ</h5>
+                <h4><?php echo ($_SESSION['lang'] === 'th') ? $teamDetail->name : $teamDetail->name_en; ?></h4>
+                <h5><?php echo ($_SESSION['lang'] === 'th') ? $teamDetail->position : $teamDetail->position_en; ?></h5>
                 <div class="detail-team">
+                  <?php echo ($_SESSION['lang'] === 'th') ? $teamDetail->description : $teamDetail->description_en; ?>
+                </div>
+                <!-- <div class="detail-team">
                   <i class="fa fa-check" aria-hidden="true"></i>  
                   <p>
                   นิติศาสตร์บัณฑิต มหาวิทยาลัยรามคำแหง รุ่น 28
@@ -104,132 +109,13 @@
                   <p>
                   เจ้าหน้าที่ความปลอดภัยระดับบริหาร
                   </p>
-                </div>
+                </div> -->
               </div>
             </div>
           </div>
           <hr class="green-hr">
         </div>
-        <div class="col-lg-12 padding-bottom-30">
-          <div class="row">
-            <div class="col-lg-3 text-center">
-              <img src="img/taweesak.png" class="img-responsive">
-            </div>
-            <div class="col-lg-9">
-              <div class="team-law">
-                <h4>นายทวีศักดิ์ ปานสีนุ่น</h4>
-                <h5>ทนายความ</h5>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  นิติศาสตร์บัณฑิต มหาวิทยาลัยรามคำแหง รุ่น 28
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  หลักสูตรวิชาว่าความของสำนักฝึกอบรมวิชาว่าความแห่งสภาทนายความ รุ่นที่ 22
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  เจ้าหน้าที่นิติกรรม สัญญา จดทะเบียนสิทธิให้เป็นไปตามกฎหมาย
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  เจ้าหน้าที่จัดการทรัพย์สินของลูกหนี้ และเจ้าหน้าที่สินเชื่อธุรกิจ ธนาคารไทยพาณิชย์
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="green-hr">
-        </div>
-        <div class="col-lg-12 padding-bottom-30">
-          <div class="row">
-            <div class="col-lg-3 text-center">
-              <img src="img/panumas.png" class="img-responsive">
-            </div>
-            <div class="col-lg-9">
-              <div class="team-law">
-                <h4>นายภานุมาศ บัวภา</h4>
-                <h5>ทนายความ</h5>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  นิติศาสตร์บัณฑิต มหาวิทยาลัยรามคำแหง
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  หลักสูตรวิชาว่าความของสำนักฝึกอบรมวิชาว่าความแห่งสภาทนายความ รุ่นที่ 31
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  เนติบัณฑิตไทย เนติบัณฑิตยสภา สมัยที่ 71
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  ผ่านการฝึกงานโครงการนักศึกษาฝึกงานคณะนิติศาสตร์ รุ่นที่ 19 ณ สำนักงานอัยการสูงสุด
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  ผ่านการฝึกงานในสถาบันพัฒนาข้าราชการฝ่ายอัยการ   สำนักงานอัยการสูงสุด
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  ที่ปรึกษากฎหมายนิติบุคคลหมู่บ้านจัดสรร
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="green-hr">
-        </div>
-        <div class="col-lg-12 padding-bottom-30">
-          <div class="row">
-            <div class="col-lg-3 text-center">
-              <img src="img/panchanok.png" class="img-responsive">
-            </div>
-            <div class="col-lg-9">
-              <div class="team-law">
-                <h4>นางสาวปานชนก ธนาวุฒิ</h4>
-                <h5>ทนายความ</h5>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  นิติศาสตร์บัณฑิต จุฬาลงกรณ์มหาวิทยาลัย
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  นิติศาสตร์มหาบัณฑิต จุฬาลงกรณ์มหาวิทยาลัย
-                  </p>
-                </div>
-                <div class="detail-team">
-                  <i class="fa fa-check" aria-hidden="true"></i>  
-                  <p>
-                  หลักสูตรวิชาว่าความของสำนักฝึกอบรมวิชาว่าความแห่งสภาทนายความ รุ่น 21
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <hr class="green-hr">
-        </div>
+        <?php endforeach ?>
 
       </div>
     </div>

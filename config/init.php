@@ -144,6 +144,41 @@ function service_Detail($id)
 	return (!empty($result)) ? current($result) : false;
 }
 
+function teamList()
+{
+	$sql = "SELECT *
+			FROM db_team
+            WHERE is_active = '1'
+			ORDER BY id ASC";
+
+	return query($sql);
+}
+
+function realList()
+{
+	$sql = "SELECT *
+			FROM db_real_estate
+            WHERE is_active = '1' AND is_sub = '0'
+			ORDER BY id ASC";
+
+	return query($sql);
+}
+
+function realDetail($id)
+{	
+	$wheres[] = "id = '{$id}'";
+	$where	= (!empty($wheres)) ? 'WHERE ' . implode('AND ', $wheres) : null;
+
+	$sql	= "SELECT *
+				FROM db_real_estate
+				{$where}
+				LIMIT 1";
+	
+	$result = query($sql);
+
+	return (!empty($result)) ? current($result) : false;
+}
+
 function pagination( $total, $limit = 12 )
 {
 	$page 	= ( !empty($_GET['page']) ) ? $_GET['page'] : 1;
