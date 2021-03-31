@@ -107,7 +107,7 @@
 				                  	<input type="text" class="form-control" id="position" name="position" value="<?php echo $team_detail->position; ?>" required>
 				                </div>
                                 <div class="form-group form-material" data-plugin="formMaterial">
-				                  	<label class="form-control-label" for="title">Position(TH)</label>
+				                  	<label class="form-control-label" for="title">Position(EN)</label>
 				                  	<input type="text" class="form-control" id="position_en" name="position_en" value="<?php echo $team_detail->position_en; ?>" required>
 				                </div>
 

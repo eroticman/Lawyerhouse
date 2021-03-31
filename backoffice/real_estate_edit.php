@@ -95,34 +95,34 @@
 			              	<form id="serviceAdd" name="serviceAdd" class="form-horizontal" method="post" enctype="multipart/form-data">
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="urlname">URL Name</label>
-				                  	<input type="text" class="form-control" id="urlname" name="urlname" value="<?php echo $real_estate__detail->url_name; ?>" required>
+				                  	<input type="text" class="form-control" id="urlname" name="urlname" value="<?php echo $real_estate_detail->url_name; ?>" required>
 				                </div>
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="keyword">Keyword</label>
-				                  	<input type="text" class="form-control" id="keyword" name="keyword" value="<?php echo $real_estate__detail->keyword; ?>" required>
+				                  	<input type="text" class="form-control" id="keyword" name="keyword" value="<?php echo $real_estate_detail->keyword; ?>" required>
 				                </div>
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Real Estate Name(TH)</label>
-				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $real_estate__detail->real_estate__name; ?>" required>
+				                  	<input type="text" class="form-control" id="name" name="name" value="<?php echo $real_estate_detail->real_estate_name; ?>" required>
 				                </div>
 				                <div class="form-group form-material" data-plugin="formMaterial">
 				                  	<label class="form-control-label" for="title">Real Estate Name(EN)</label>
-				                  	<input type="text" class="form-control" id="name_en" name="name_en" value="<?php echo $real_estate__detail->real_estate__name_en; ?>" required>
+				                  	<input type="text" class="form-control" id="name_en" name="name_en" value="<?php echo $real_estate_detail->real_estate_name_en; ?>" required>
 				                </div>
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description(TH)</label>
 									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor" name="description">
-											<?php echo $real_estate__detail->description; ?>
+											<?php echo $real_estate_detail->description; ?>
 									</textarea>
 								</div>
 								<div class="form-group form-material" data-plugin="formMaterial">
 									<label class="form-control-label" for="detail">Description(EN)</label>
 									<textarea class="form-control summernote" rows="4" placeholder="Detail" id="editor_en" name="description_en">
-											<?php echo $real_estate__detail->description_en; ?>
+											<?php echo $real_estate_detail->description_en; ?>
 									</textarea>
 								</div>
 				                <div class="text-right">
-				                	<input type="hidden" name="real_estate__id" value="<?php echo $real_estate__detail->id; ?>">
+				                	<input type="hidden" name="real_estate_id" value="<?php echo $real_estate_detail->id; ?>">
 						            <button type="submit" class="btn btn-animate btn-animate-side btn-success">
 						              	<span><i class="icon wb-check" aria-hidden="true"></i> Save</span>
 						            </button>

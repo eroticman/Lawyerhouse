@@ -6,7 +6,7 @@ $config['database']	= array(
 	'timezone'		=> 'Asia/Bangkok',
 	'client'		=> array(
 		'host'			=> 'localhost',
-		'database_name'	=> 'lawyer',
+		'database_name'	=> 'lawyerhouse',
 		'username'		=> 'root',
 		'password'		=> null
 	),

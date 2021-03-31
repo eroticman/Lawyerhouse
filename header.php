@@ -48,11 +48,11 @@
               id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <?php echo $realestate ?>
             </a>
+            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <?php 
                   $realList = realList();
                   foreach ($realList as $realDetail) :
               ?>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
               <a class="dropdown-item" href="realestate/<?php echo $realDetail->id; ?>/<?php echo $realDetail->url_name; ?>">- 
                 <?php echo ($_SESSION['lang'] === 'th') ? $realDetail->real_estate_name : $realDetail->real_estate_name_en; ?></a>
               <?php endforeach ?>

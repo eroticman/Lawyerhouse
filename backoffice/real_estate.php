@@ -221,7 +221,7 @@
 
 	<script type="text/javascript">
 
-	function delR(rsid)
+	function delR(rid)
     {
     	$('#rid').val(rid);
     	$('#modaldelete').modal('show');
