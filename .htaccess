@@ -1,5 +1,6 @@
 RewriteEngine On
 RewriteRule ^services/(.*)/(.*)$ services-detail.php?id=$1&url_name=$2
+RewriteRule ^realestate/(.*)/(.*)$ real-estate-detail.php?id=$1&url_name=$2
 RewriteRule ^blogs/(.*)/(.*)$ blog-detail.php?id=$1&url_name=$2
 ErrorDocument 404 https://lawyerhouse.co.th/error/404
 

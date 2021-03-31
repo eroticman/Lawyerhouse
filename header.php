@@ -53,7 +53,7 @@
                   foreach ($realList as $realDetail) :
               ?>
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" href="blog">- 
+              <a class="dropdown-item" href="realestate/<?php echo $realDetail->id; ?>/<?php echo $realDetail->url_name; ?>">- 
                 <?php echo ($_SESSION['lang'] === 'th') ? $realDetail->real_estate_name : $realDetail->real_estate_name_en; ?></a>
               <?php endforeach ?>
             </div>
