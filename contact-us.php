@@ -90,7 +90,7 @@
               </div>
               <div class="col-lg-4 col-md-3">
                   <h4><?php echo $scan ?></h4>
-                  <a href="https://line.me/ti/p/b28Cn9LIlH" target="_blank"><img src="img/qr.png" class="img-responsive max-480"></a>
+                  <a href="https://line.me/ti/p/ryoL4voZM3" target="_blank"><img src="img/qr-code.png" class="img-responsive max-480"></a>
                 </div>
             </div>
 
